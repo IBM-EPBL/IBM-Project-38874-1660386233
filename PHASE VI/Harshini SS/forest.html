@@ -1,0 +1,213 @@
+<style>
+  p.danger{
+    color: red;
+  }
+
+  p.safe{
+    color: green;
+  }
+  .flex-container{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 30px;
+  }
+  .flex-container-graph-item{
+    flex-grow: 3;
+    /* border: 1px solid grey; */
+  }
+  .flex-container-table-item{
+    flex-grow: 1;
+    /* border: 1px solid grey; */
+    align-items: center;
+    padding: 10px;
+  }
+  .graph{
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  table {
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    margin: 30px auto;
+    }
+    
+  th, td {
+    padding: 10px 20px;
+    border: 1px solid black;
+    text-align: center;
+  }
+  .tools{
+    display: flex;
+    justify-content: space-around;
+    border-radius: 10px;
+    width: 80%;
+    margin: 0 auto;
+    /* border: 1px solid grey; */
+  }
+  .tools-item{
+    flex-grow: 1;
+    padding: 10px;
+  }
+  .img{
+    width: 60px;
+    padding: 10px;
+  }
+  canvas{
+    margin: 40px auto;
+  }
+  .red{
+    background-color: #ffcdd2;
+  }
+  .green{
+    background-color: #c8e6c9;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="flex-container">
+  <div class="flex-container-graph-item">
+    {% if fire > 50 : %}
+    <div class="tools red">
+      <div class="tool-item">
+        <img class="img" src="../static/css/images/temp (1).png">
+        <p>Tempreture: {{ latest_temp }}</p>
+      </div>
+      <div class="tool-item">
+        <img class="img" src="../static/css/images/hum.png">
+        <p>Humidity: {{ latest_humid }}</p>
+      </div>
+      <div class="tool-item">
+        <p style="padding: 10px;">Chances of Fire</p>
+        <p class="danger">Fire Detected</p>
+      </div>
+    </div>
+
+    {% else: %}
+    <div class="tools green">
+      <div class="tool-item">
+        <img class="img" src="../static/css/images/temp (1).png">
+        <p>Tempreture: {{ latest_temp }}</p>
+      </div>
+      <div class="tool-item">
+        <img class="img" src="../static/css/images/hum.png">
+        <p>Humidity: {{ latest_humid }}</p>
+      </div>
+      <div class="tool-item">
+        <p style="padding: 10px;">Chances of Fire</p>
+        <p class="safe">No Fire Detected</p>
+      </div>
+    </div>
+{% extends "base.html" %}
+
+{% block styleContent %}
+<style>
+  p.danger{
+    color: red;
+  }
+
+  p.safe{
+    color: green;
+  }
+  .flex-container{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 30px;
+  }
+  .flex-container-graph-item{
+    flex-grow: 3;
+    /* border: 1px solid grey; */
+  }
+  .flex-container-table-item{
+    flex-grow: 1;
+    /* border: 1px solid grey; */
+    align-items: center;
+    padding: 10px;
+  }
+  .graph{
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  table {
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    margin: 30px auto;
+    }
+    
+  th, td {
+    padding: 10px 20px;
+    border: 1px solid black;
+    text-align: center;
+  }
+  .tools{
+    display: flex;
+    justify-content: space-around;
+    border-radius: 10px;
+    width: 80%;
+    margin: 0 auto;
+    /* border: 1px solid grey; */
+  }
+  .tools-item{
+    flex-grow: 1;
+    padding: 10px;
+  }
+  .img{
+    width: 60px;
+    padding: 10px;
+  }
+  canvas{
+    margin: 40px auto;
+  }
+  .red{
+    background-color: #ffcdd2;
+  }
+  .green{
+    background-color: #c8e6c9;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="flex-container">
+  <div class="flex-container-graph-item">
+    {% if fire > 50 : %}
+    <div class="tools red">
+      <div class="tool-item">
+        <img class="img" src="../static/css/images/temp (1).png">
+        <p>Tempreture: {{ latest_temp }}</p>
+      </div>
+      <div class="tool-item">
+        <img class="img" src="../static/css/images/hum.png">
+        <p>Humidity: {{ latest_humid }}</p>
+      </div>
+      <div class="tool-item">
+        <p style="padding: 10px;">Chances of Fire</p>
+        <p class="danger">Fire Detected</p>
+      </div>
+    </div>
+
+    {% else: %}
+    <div class="tools green">
+      <div class="tool-item">
+        <img class="img" src="../static/css/images/temp (1).png">
+        <p>Tempreture: {{ latest_temp }}</p>
+      </div>
+      <div class="tool-item">
+        <img class="img" src="../static/css/images/hum.png">
+        <p>Humidity: {{ latest_humid }}</p>
+      </div>
+      <div class="tool-item">
+        <p style="padding: 10px;">Chances of Fire</p>
+        <p class="safe">No Fire Detected</p>
+      </div>
+    </div>
